@@ -50,9 +50,9 @@ theme_ronats <- function(...) {
 #' nc <- ronats_pull(state = "nc")
 #' head(nc)
 #'
-ronats_pull <- function(state = NULL) {
+ronats_pull <- function(state = "us") {
 
-  if (is.null(state)) {
+  if (state == "us") {
     api <- "https://covidtracking.com/api/v1/us/daily.csv"
   } else {
     api <- paste0("https://covidtracking.com/api/v1/states/", state, "/daily.csv")
@@ -132,4 +132,6 @@ ronats_plot <- function(d, v, ...) {
     labs(x = "", y = "", caption = plot_caption, title = plot_title) +
     # theme
     plot_theme
+
+  p
 }

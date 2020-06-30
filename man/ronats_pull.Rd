@@ -4,7 +4,7 @@
 \alias{ronats_pull}
 \title{Pull data from Covid Tracking Project API}
 \usage{
-ronats_pull(state = NULL)
+ronats_pull(state = "us")
 }
 \arguments{
 \item{state}{If NULL (the default), pull data for all US states plus DC.
