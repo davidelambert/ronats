@@ -1,5 +1,7 @@
 ## THEME FUNCTION ====
+
 #' Custom ggplot2 theme
+#' @import ggplot2
 #' @export
 theme_ronats <- function(...) {
   # starting point
@@ -42,6 +44,8 @@ theme_ronats <- function(...) {
 #' @param state If NULL (the default), pull data for all US states plus DC.
 #'     Otherwise, a 2-character lowercase string with the state's abbreviation,
 #'     e.g. "nc".
+#' @import readr
+#' @import dplyr
 #' @export
 #' @examples
 #' us <- ronats_pull()
@@ -79,6 +83,9 @@ ronats_pull <- function(state = "us") {
 #' @param v A non-date continuous variable. Intended for use with Covid Tracking
 #'   Project variables. See https://covidtracking.com/api for current and
 #'   deprecated variables available via the project API.
+#' @param ... Argument passed to other methods.
+#' @import ggplot2
+#' @import dplyr
 #' @export
 #' @examples
 #' nc <- ronats_pull(state = "nc")
@@ -124,7 +131,7 @@ ronats_plot <- function(d, v, ...) {
     ) +
     # 7 day rolling average
     geom_line(
-      aes(y = rollapplyr({{v}}, 7, mean, fill = NA)),
+      aes(y = zoo::rollapplyr({{v}}, 7, mean, fill = NA)),
       color = raline,
       size = 1
     ) +
