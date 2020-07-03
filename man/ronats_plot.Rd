@@ -13,6 +13,8 @@ Covid Tracking Project data via ronats::ronats_pull()}
 \item{v}{A non-date continuous variable. Intended for use with Covid Tracking
 Project variables. See https://covidtracking.com/api for current and
 deprecated variables available via the project API.}
+
+\item{...}{Argument passed to other methods.}
 }
 \description{
 This function returns a ggplot2 object plotting a Covid Tracking Project

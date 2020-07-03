@@ -1,6 +1,7 @@
 ## THEME FUNCTION ====
 
 #' Custom ggplot2 theme
+#' @param ... Other arguments passed to ggplot2::theme()
 #' @import ggplot2
 #' @export
 theme_ronats <- function(...) {

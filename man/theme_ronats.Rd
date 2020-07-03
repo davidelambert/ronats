@@ -6,6 +6,9 @@
 \usage{
 theme_ronats(...)
 }
+\arguments{
+\item{...}{Other arguments passed to ggplot2::theme()}
+}
 \description{
 Custom ggplot2 theme
 }
